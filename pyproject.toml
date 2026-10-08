@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pulse-lab"
+version = "0.1.0"
+description = "Forecast lab: can a simple price model beat a prediction market's own odds? Read-only, no trading, no money."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["requests>=2.28"]
+
+[project.optional-dependencies]
+research = ["numpy>=1.23", "scikit-learn>=1.2"]
+test = ["pytest>=7"]
+
+[project.scripts]
+pulse-lab = "pulse_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
